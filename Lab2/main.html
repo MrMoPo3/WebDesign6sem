@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz</title>
+    <script src="main.js"></script>
+</head>
+<body>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" href="main.html">Survey</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile.html">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="sign up.html">Exit</a>
+        </li>
+    </ul>
+    <div class="main">
+        <div class="container">
+            <form id="lifestyleSurveyForm">
+                <h1>Survey: Lifestyle and Health</h1>
+
+                <ol>
+                    <li>
+                        <label>How often do you engage in physical activity during the week?</label>
+                        <select name="q1">
+                            <option value="daily">Every day</option>
+                            <option value="severalTimes">Several times a week</option>
+                            <option value="rarely">Rarely</option>
+                            <option value="never">Never</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <label>How do you evaluate your nutrition?</label>
+                        <select name="q2">
+                            <option value="healthy">Healthy and balanced</option>
+                            <option value="average">Average</option>
+                            <option value="notHealthy">Not very healthy</option>
+                            <option value="unhealthy">Unhealthy</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <label>What methods do you use for stress relief and mental well-being?</label>
+                        <input type="checkbox" name="q3" value="meditation"> Meditation
+                        <input type="checkbox" name="q3" value="sports"> Sports
+                        <input type="checkbox" name="q3" value="reading"> Reading
+                    </li>
+
+                    <li>
+                        <label>How many hours of sleep do you typically get per night?</label>
+                        <select name="q4">
+                            <option value="lessThan6">Less than 6 hours</option>
+                            <option value="6to8">6-8 hours</option>
+                            <option value="8to10">8-10 hours</option>
+                            <option value="moreThan10">More than 10 hours</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <label>What is your overall quality of life today?</label>
+                        <select name="q5">
+                            <option value="verySatisfied">Very satisfied</option>
+                            <option value="satisfied">Satisfied</option>
+                            <option value="average">Average</option>
+                            <option value="unsatisfied">Unsatisfied</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <label>How do you feel about regular medical check-ups?</label>
+                        <input type="radio" name="q6" value="regularly"> I go for regular check-ups
+                        <input type="radio" name="q6" value="annually"> Once a year
+                        <input type="radio" name="q6" value="whenNeeded"> Only when needed
+                        <input type="radio" name="q6" value="never"> I never go to the doctor
+                    </li>
+
+                    <li>
+                        <label>What do you consider a key element of a healthy lifestyle?</label>
+                        <input type="checkbox" name="q7" value="physicalActivity"> Physical activity
+                        <input type="checkbox" name="q7" value="balancedDiet"> Balanced diet
+                        <input type="checkbox" name="q7" value="emotionalWellbeing"> Emotional well-being
+                    </li>
+                </ol>
+
+                <button class="btn btn-primary" type="button">Result</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <span class="don">Made by Levchuk Ivan; Усі права захищені &Copy; 2024</span>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

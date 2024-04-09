@@ -1,0 +1,89 @@
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: darkslategray;
+
+}
+
+.question {
+    font-size: 20px;
+}
+
+.center {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.main {
+    display: flex;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 0.33%;
+    margin-top: 10px;
+    float: left;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.85);
+    border: 2px solid silver;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 200%;
+    margin-right: 0.33%;
+    display: block;
+    margin-top: 10px;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.85);
+    border: 2px solid silver;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e2e2d;
+}
+
+.nav-link {
+    margin-right: 5px;
+    margin-top: 10px;
+    padding-top: 0;
+    font-family: Gill Sans, sans-serif;
+    font-size: 1.3em;
+    color: #310000;
+    line-height: 130%;
+    padding-left: 5;
+    padding-right: 5;
+    border: 1px solid silver;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.05);s
+}
+
+.health_photo {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.footer {
+    width: 100%;
+    background-color: #fff;
+    min-height: 25px;
+    margin-top: 5px;
+    float: left;
+    border-top: 2px solid silver;
+    text-align: center;
+    line-height: 180%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+}
