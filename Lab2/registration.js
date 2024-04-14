@@ -1,4 +1,3 @@
-// Model: Handles data and business logic
 class UserModel {
     constructor(name, surname, email, password) {
         this.name = name;
@@ -8,7 +7,6 @@ class UserModel {
     }
 }
 
-// View: Handles the UI and DOM manipulation
 class UserView {
     constructor() {
         this.nameInput = document.getElementById("inputName");
@@ -31,11 +29,10 @@ class UserView {
     }
 
     redirectToMainPage() {
-        window.location.href = "main.html";
+        window.location.href = "../main.html";
     }
 }
 
-// Controller: Handles user interactions and application logic
 class UserController {
     constructor(model, view) {
         this.model = model;
@@ -47,7 +44,6 @@ class UserController {
     handleSignUp(event) {
         event.preventDefault();
         const user = this.view.getUserInput();
-        // Here you can perform further validations if needed
         this.view.showRegistrationSuccessMessage();
         this.view.redirectToMainPage();
     }

@@ -1,4 +1,3 @@
-// Модель
 class SurveyModel {
     constructor(form) {
         this.form = form;
@@ -27,8 +26,6 @@ class SurveyModel {
     }
 }
 
-
-// Вид
 class SurveyView {
     constructor() { }
 
@@ -43,7 +40,6 @@ class SurveyView {
     }
 }
 
-// Контролер
 class SurveyController {
     constructor(model, view) {
         this.model = model;
@@ -62,7 +58,6 @@ class SurveyController {
     }
 }
 
-// Ініціалізація
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("lifestyleSurveyForm");
     const model = new SurveyModel(form);
