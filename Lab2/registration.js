@@ -2,8 +2,8 @@ class UserModel {
     validateUserData(userData) {
         const { name, password, email, dob } = userData;
 
-        if (name.length < 4 || password.length < 4) {
-            alert("Login and password must contain at least 4 characters!");
+        if (password.length < 4) {
+            alert("Password must contain at least 4 characters!");
             return false;
         }
 
