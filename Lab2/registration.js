@@ -1,27 +1,75 @@
 class UserModel {
-    constructor(name, surname, email, password) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.password = password;
+    validateUserData(userData) {
+        const { name, password, email, dob } = userData;
+
+        if (name.length < 4 || password.length < 4) {
+            alert("Login and password must contain at least 4 characters!");
+            return false;
+        }
+
+        if (!this.isValidEmail(email)) {
+            alert("Please enter a valid email address!");
+            return false;
+        }
+
+        if (!dob) {
+            alert("Please enter your date of birth!");
+            return false;
+        }
+
+        const today = new Date().toISOString().split("T")[0];
+        if (dob > today) {
+            alert("Enter a correct date of birth that does not exceed the current date!");
+            return false;
+        }
+
+        return true;
+    }
+
+    isValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    checkExistingAccount(userData) {
+        const { email, name } = userData;
+        const accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+
+        const existingAccount = accounts.find(
+            (account) => account.email === email || account.name === name
+        );
+
+        if (existingAccount) {
+            alert(
+                "An account with this email address or username already exists!"
+            );
+            return false;
+        }
+
+        return true;
+    }
+
+    saveUserData(userData) {
+        const accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+        accounts.push(userData);
+        localStorage.setItem("accounts", JSON.stringify(accounts));
+    }
+
+    setCurrentAccount(account) {
+        localStorage.setItem("currentAccount", JSON.stringify(account));
     }
 }
 
 class UserView {
-    constructor() {
-        this.nameInput = document.getElementById("inputName");
-        this.surnameInput = document.getElementById("inputSurname");
-        this.emailInput = document.getElementById("inputEmail4");
-        this.passwordInput = document.getElementById("inputPassword4");
-        this.signUpButton = document.querySelector("button.btn-primary");
-    }
-
-    getUserInput() {
-        const name = this.nameInput.value;
-        const surname = this.surnameInput.value;
-        const email = this.emailInput.value;
-        const password = this.passwordInput.value;
-        return new UserModel(name, surname, email, password);
+    getUserData() {
+        return {
+            name: document.getElementById("inputName").value,
+            password: document.getElementById("inputPassword").value,
+            email: document.getElementById("inputEmail").value,
+            dob: document.getElementById("inputDOB").value,
+            surname: document.getElementById("inputSurname").value,
+            sex: document.getElementById("inputSex").value,
+        };
     }
 
     showRegistrationSuccessMessage() {
@@ -37,13 +85,26 @@ class UserController {
     constructor(model, view) {
         this.model = model;
         this.view = view;
-
-        this.view.signUpButton.addEventListener("click", this.handleSignUp.bind(this));
+        this.registrationButton = document.getElementById("registrationButton");
+        this.registrationButton.addEventListener("click", (event) => this.handleSignUp(event));
     }
 
     handleSignUp(event) {
         event.preventDefault();
-        const user = this.view.getUserInput();
+        const userData = this.view.getUserData();
+        this.saveDataToLocalStorage(userData);
+    }
+
+    saveDataToLocalStorage(userData) {
+        if (!this.model.validateUserData(userData)) {
+            return;
+        }
+
+        if (!this.model.checkExistingAccount(userData)) {
+            return;
+        }
+
+        this.model.saveUserData(userData);
         this.view.showRegistrationSuccessMessage();
         this.view.redirectToMainPage();
     }
